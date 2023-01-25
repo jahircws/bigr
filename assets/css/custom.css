@@ -1,0 +1,948 @@
+/* ==================== haerder css code ============= */
+h3.logogtitle {
+    margin: 0;
+    border: 1px solid #9f9f9f;
+    width: 100%;
+    font-size: 32px;
+    padding: 5px;
+    text-transform: capitalize;
+    background: #fff;
+}
+/* ==================== haerder css code ============= */
+
+/* ==================== footer css code ============= */
+.w-layout-grid.grid-5 {
+    display: flex;
+    justify-content: center;
+}
+/* ==================== footer css code ============= */
+
+/* -=========== this is about section css code created by alam and code added date : 301/12/2022 ============== */
+.about-section {
+    display: flex;
+}
+.about-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.about-section .column-12.w-col.w-col-6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.about-section .div-block-28 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-section .column-12.w-col.w-col-6 {
+    margin-top: 0!important;
+}
+/* -=========== this is about section css code created by alam and code added date : 301/12/2022 ============== */
+
+/* -=========== this is Democratising  section css code created by alam and code added date : 301/12/2022 ============== */
+.firstTopImage {
+    width: 95%;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+.firstTopImage img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+/* -=========== this is Democratising  section css code created by alam and code added date : 301/12/2022 ============== */
+
+/* =============== this is birg club section css code ================== */
+.bigr-div-part {
+    padding: 40px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    clear: both;
+    background-color: #000;
+    border-radius: 20px;
+}
+.contentTtile {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-between;
+}
+.fisrt-div-title {
+    display: flex;
+    align-items: flex-start;
+    justify-self: start;
+}
+.fisrt-div-title h3 {
+    padding: 0;
+    margin: 0;
+    color: rgba(106,255,175,255);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 28px;
+}
+.fisrt-div-title span {
+    margin-top: 4px;
+}
+.right-cash-img {
+    width: 100%;
+    max-width: 220px;
+    display: block;
+}
+.right-cash-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.number-list ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+}
+.number-list ul li {
+    width: 11.11%;
+    padding-left: 15px;
+    margin: 0!important;
+    display: block;
+    border-right: 1px solid #fff;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.number-list ul li:first-child {
+    padding-left: 0;
+}
+.number-list ul li:last-child {
+    border-right: 0;
+}
+.cash-in-bank {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.left-side-cash-in {
+    width: 14.5%;
+    background-color: #6affaf;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.birgclub-right-box {
+    width: 85%;
+    background-color: #3b3b3b;
+    text-align: center;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.birgclub-right-box h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    color: #6affaf;
+}
+.birgclub-right-box p {
+    color: #6affaf;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+.cash-con p {
+    padding: 0!important;
+    margin: 0!important;
+}
+.cash-in-heading {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #000;
+    text-transform: capitalize;
+}
+.cash-con {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.cash-con span {
+    padding-right: 5px;
+}
+.housrtitle {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #000;
+    text-transform: capitalize;
+}
+/* =============== this is birg club section css code ================== */
+
+/* =============== this is investor page css code ================== */
+.middle-east {
+    padding-top: 100px!important;
+}
+/* =============== this is investor page css code ================== */
+
+/* =============== this is partners page css code ================== */
+.w-layout-grid.header76_component1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+.w-layout-grid.header76_component1 .div-block-6 {
+    padding-left: 0;
+}
+.w-layout-grid.header76_component1 .div-block-6 h1, .w-layout-grid.header76_component1 .div-block-6 p {
+    text-align: center;
+}
+.w-layout-grid.header76_component1 .div-block-6 p {
+    padding: 0;
+}
+.w-layout-grid.header76_component1 .buttons-row-funding.mg-top-48px {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ptt-0 {
+    padding-top: 0!important;
+}
+/* =============== this is partners page css code ================== */
+
+/* =============== this is faq page css code ================== */
+  .accordion .accordion-item {
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    margin-top: 20px;
+    border-radius: 10px;
+    border-color: rgb(230, 230, 235);
+    padding: 34px 40px;
+  }
+  .accordion h2 {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+  /*    padding: 1em 0; */
+    color: #333333;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+    padding:0px;
+    line-height:25px;
+    margin:0px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .accordion-content p {
+    line-height: initial;
+}
+h2#accordion-button-1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+  .accordion h2:hover, .accordion h2:focus {
+    cursor: pointer;
+    color: #03b5d2;
+  }
+  .accordion h2:hover::after, .accordion h2:focus::after {
+    cursor: pointer;
+    color: #03b5d2;
+    border: 1px solid #03b5d2;
+  }
+  .accordion h2 .accordion-title {
+    padding: 0;
+    display: block;
+    text-align: left;
+  }
+  .accordion h2 .icon {
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+  .faq-content {
+      padding: 80px 0px;
+  }
+  .accordion h2 .icon::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+  }
+  .accordion h2 .icon::after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+  .accordion h2[aria-expanded=true] {
+    color: #03b5d2;
+  }
+  .accordion h2[aria-expanded=true] .icon::after {
+    width: 0;
+  }
+  .accordion h2[aria-expanded=true] + .accordion-content {
+    opacity: 1;
+    max-height: 5000px;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+    padding: 20px;
+  }
+  .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+ 
+.accordion .accordion-content p {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: inherit;
+}
+/* =============== this is faq page css code ================== */
+
+/* =============== this is blogs page css code ================== */
+.ptt-150 {
+    padding-top: 150px!important;
+}
+.blog-caard img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+.blog-caard p {
+    padding: 0;
+    margin: 0;
+}
+.blog-caard p.card-text {
+    margin-bottom: 20px;
+}
+.blog-caard a.btn.btn-primary {
+    padding: 13px 20px;
+}
+/* =============== this is blogs page css code ================== */
+
+/* =============== this is login page css code ================== */
+.login-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.bg-Imageleft {
+    width: 60%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.formRight {
+    width: 40%;
+}
+.formRight {
+    min-height: 100vh;
+    display: block;
+    background-color: #f7f7f7;
+    padding: 100px 55px 55px;
+}
+
+h2.form-heading {
+    width: 100%;
+    display: block;
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 43px;
+}
+
+input.form-control {
+    display: block;
+    width: 100%;
+    background: 0 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.2;
+    height: 55px;
+    padding: 0 26px;
+}
+input.form-control:focus {
+    border: 1px solid #6675df;
+    box-shadow: none;
+}
+.form-check {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.login100-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background: #6675df;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+    border: 0;
+}
+.login100-form-btn:hover {
+    background-color: #000;
+}
+.txt2 {
+    font-family: sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #999;
+}
+.text-center.p-t-46.p-b-20 {
+    padding-top: 46px;
+    padding-bottom: 20px;
+}
+.flex-c-m {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+.login100-form-social-item {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.bg1 {
+    background: #3b5998;
+}
+.login100-form-social-item {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.bg2 {
+    background: #1da1f2;
+}
+.sliderdiv {
+    width: 100%;
+    max-width: 526px;
+    height: 347px;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px;
+    background-color: rgba(0,0,0,.55);
+    border-radius: 10px;
+    color: #57a4dd;
+    justify-content: flex-start;
+}
+.slliderimage {
+    width: 100%;
+    max-width: 80px;
+    display: block;
+    text-align: left;
+}
+.slliderimage img {
+    width: 100%;
+    height: 100%;
+}
+.sliderdiv h3 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+.sliderdiv h2 {
+    font-size: 32px;
+    color: #fff;
+}
+.bg-Imageleft {
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+}
+.sliderdiv p {
+    margin: 0;
+    color: #fff;
+    font-size: 16px;
+    line-height: inherit;
+    margin-top: 20px;
+}
+.bg-Imageleft button:focus {
+    outline: none!important;
+}
+.bg-Imageleft .owl-dots {
+    position: relative;
+    top: -50px;
+}
+.bg-Imageleft .owl-nav {
+    display: none;
+}
+/* =============== this is login page css code ================== */
+
+/* =============== this is how it work section  css code ================== */
+.interrateDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    clear: both;
+    position: relative;
+}
+.leftTitle-step-1 {
+    width: 50%;
+    padding: 40px;
+    text-align: left;
+}
+.rightLogo {
+    width: 50%;
+}
+.leftTitle-step-1 p {
+    padding: 0!important;
+    margin: 0!important;
+}
+.width100 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+}
+
+.firstLogo {
+    width: 48%;
+    max-width: 100%;
+    height: 110.72px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    background: #fff;
+    border-radius: 10px;
+}
+.firstLogo:nth-child(5){
+    margin-bottom: 0;
+}
+.firstLogo:nth-child(6){
+    margin-bottom: 0;
+}
+.firstLogo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: contain;
+    background: #fff;
+}
+.rightLogo {
+    width: 50%;
+    max-width: 100%;
+    padding: 30px;
+    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(2,0,36,1) 64%);
+    border: 1px solid #3e2a2a;
+    border-radius: 15px;
+}
+.leftTitle-step-1 p {
+    padding: 0;
+    margin: 0;
+    color: #1da1f2;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.leftTitle-step-1 h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 38px;
+    color: #333333;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+ul.datalist {
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+ul.datalist li {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+.border-only {
+    border: 1px solid #fff;
+}
+.border-one {
+    background: #060550;
+    margin-bottom: 15px!important;
+}
+li.buttomdfdj {
+    width: 100%;
+}
+
+li.buttomdfdj a {
+    width: 100%!important;
+    display: block;
+    margin-left: 0!important;
+    background: #0c0b99;
+}
+.mtt-20 {
+    margin-top: 20px;
+}
+.bg-remove {
+    background-color: unset!important;
+    padding: 0!important;
+}
+.transferimae {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+.transferimae.changeImageSize {
+    width: 100%;
+    max-width: 557px;
+    height: 417px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    
+    background: #0c1622;
+}
+.transferimae.changeImageSize img {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    height: auto;
+    border-radius: 10px;
+
+}
+
+.transferimae img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* =============== this is how it work section  css code ================== */
+
+/* =============== this is who can use section  css code ================== */
+.bussiness-modal {
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 24px;
+    text-align: left;
+}
+.listalladata {
+    list-style: none;
+    padding-left: 10px;
+}
+.listalladata li {
+    padding-left: 0;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+/* =============== this is who can use section  css code ================== */
+
+
+.row-perents {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+.width-auto-33 {
+    width: 100%;
+    max-width: 320px;
+    min-height: 409px;
+}
+.dofsdnfodfdper {
+    width: 100%;
+    max-width: 329px;
+    min-height: 430px;
+    padding: 30px;
+    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+}
+.dfsjdbfdkj {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-circle {
+    font-size: 10px;
+    width: 100%;
+    max-width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.cotetn-profile p {
+    margin: 0;
+    padding: 0;
+}
+
+.cotetn-profile {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: initial;
+}
+
+h3.titlebsdbckjd {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    line-height: inherit;
+}
+
+.cotetn-profile p {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    color: #000;
+    line-height: inherit;
+    font-size: 14px;
+}
+.dfsjdbfdkj {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-circle {
+    font-size: 10px;
+    width: 100%;
+    max-width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.cotetn-profile p {
+    margin: 0;
+    padding: 0;
+}
+
+.cotetn-profile {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: initial;
+}
+
+h3.titlebsdbckjd {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    line-height: inherit;
+}
+
+.cotetn-profile p {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    color: #000;
+    line-height: inherit;
+    font-size: 14px;
+}
+
+.lsit-ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.lsit-ul li {
+    padding: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    list-style: none;
+    padding-left: 0!important;
+    display: flex;
+    justify-content: start;
+}
+
+.lsit-ul ul {
+    padding: 0;
+    margin-top: 20px;
+    list-style: none;
+    width: 100%;
+}
+
+.sdfhsdjkf {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: initial;
+}
+
+p.dsfdjbkgsdjfd {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+}
+
+h5.dfhdsj {
+    padding: 0;
+    margin: 0;
+}
+
+.card-list-data {
+    width: 100%;
+    max-width: 40px;
+    height: auto;
+}
+
+.card-list-data img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+a.btn-primary.small.header-btn-hidde-on-mb.w-button.sdjfhksdjfk {
+    font-size: 12px;
+    padding: 9px 11px;
+    border-radius: 10px;
+    background-image: linear-gradient(59.94deg, #0ac4ff, #06f 100%, #46c6fd 0, #64a2f9);
+    margin-left: 0!important;
+}
+a.btn-primary.small.header-btn-hidde-on-mb.w-button.sdfdglkdhfkd {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50px!important;
+    display: block;
+    background-image: linear-gradient(59.94deg, #0ac4ff, #06f 100%, #46c6fd 0, #64a2f9);
+}
+.button-div-fgdf {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a.btn-primary.small.header-btn-hidde-on-mb.w-button.sdafhksdjfsdj-dfd {
+    width: 100%;
+    border-radius: 10px;
+    background-image: linear-gradient(59.94deg, #0ac4ff, #06f 100%, #46c6fd 0, #64a2f9);
+}
+ul.dfjdf-dfdk {
+    width: 100%;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.lsit-ul.dfdbdjks {
+    width: 100%;
+    height: 100%;
+}
+.dsconehr-dfd {
+    padding: 30px 5px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+h3.conpines {
+    padding: 0;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+}
+
+.dsconehr-dfd p {
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+    font-size: 15px;
+    color: #222;
+    font-weight: 500;
+    font-family: sans-serif;
+}

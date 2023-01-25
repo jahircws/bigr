@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+        <link rel="icon" type="image/x-icon" href="assets/images/get-started/icon_02.png">
+        <link rel="stylesheet" href="assets/css/custom.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <style>
+            .error, .error p {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="login-form">
+            <div class="bg-Imageleft" style="background-image: url('assets/images/form-bg.jpg');">
+                <div class="sliderOwl owl-carousel owl-theme">
+                    <div class="sliderdiv">
+                        <h3>FOR COMPANIES WITH RECURRING</h3>
+                        <h2>Access to your annual cashflow - Today!</h2>
+                        <p>BiGR Club allows you to get instant capital for
+                            your recurring revenue without dilution.</p>
+                    </div>
+                    <div class="sliderdiv">
+                        <div class="slliderimage">
+                            <img src="assets/images/slider/slider_02.png" alt="slidr 2">
+                        </div>
+                        <h2>Access to your annual cashflow - Today!</h2>
+                        <p>BIGR Club allows you to get instant capital for
+                            your recurring revenue without dilution.</p>
+                    </div>
+                    <div class="sliderdiv">
+                        <div class="slliderimage">
+                            <img src="assets/images/slider/slider_02.png" alt="slidr 2">
+                        </div>
+                        <h2>Access to your annual cashflow - Today!</h2>
+                        <p>BIGR Club allows you to get instant capital for
+                            your recurring revenue without dilution.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="formRight">
+                <form id="frmLogin">
+                    <h3 class="logogtitle text-center border-0 mb-2"><a href="index.html"><strong>Bigr.Club</strong></a></h3>
+                    <h2 class="form-heading">Login to continue</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <div class="check-box">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                        </div>
+                        <div class="forgetpassworkd">
+                            <div class="forgetpass">Forgot Password?</div>
+                        </div>
+                    </div>
+                    <button type="submit" class="login100-form-btn"> Login </button>
+
+                    <div class="text-center p-t-46 p-b-20">
+                        <span class="txt2"> or sign up using </span>
+                    </div>
+                    <div class="login100-form-social flex-c-m">
+                        <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+                            <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- slider js cdn linke -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <script>
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                smartSpeed: 250,
+                animateIn: true,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:1,
+                        nav:true
+                    },
+                    600:{
+                        items:1,
+                        nav:false
+                    },
+                    1000:{
+                        items:1,
+                        nav:false,
+                        dots: true,
+                        loop:true
+                    }
+                }
+            });
+            $('#frmLogin').validate({
+                rules: {
+                    email: {
+                        required: true
+                    },
+                    password: {
+                        required: true
+                    }
+                },
+                submitHandler: (form, e) => {
+                    e.preventDefault();
+                    window.location.href = 'dashboard.html';
+                }
+            });
+        </script>
+    </body>
+</html>
