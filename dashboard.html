@@ -7,6 +7,7 @@
 
         <link rel="icon" type="image/x-icon" href="assets/images/get-started/icon_02.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -26,40 +27,29 @@
 
             <div class="section mob wf-section container" style="margin-top: 50px; margin-bottom: 50px;">
                 <div class="card">
-                    <div class="card-header" style="background-color: transparent;">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 text-center">
-                                <button type="button" class="btn btn-primary" id="dapiOn" disabled="true">Integrate Bank Login</button>
-                                <div id="ClientLogged" style="display: none;">
-                                    <button type="button" class="btn btn-danger mr-2" id="dapiOff">Bank Logout</button>
-                                    <button type="button" class="btn btn-info" onclick="getIntervalTransactions();" id="transactionsShow">Show transactions</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body">
-                        <table class="table table-striped" width="100%">
-                            <thead>
-                                <tr>
-                                    <th width="5%">Sl#</th>
-                                    <th width="15%">Date</th>
-                                    <th width="35%" class="text-left">Description</th>
-                                    <th width="10%">Reference</th>
-                                    <th width="15%">Dr/Cr</th>
-                                    <th width="20%">Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody id="transData">
-                                
-                            </tbody>
-                        </table>
+                        <div class="row justify-content-center text-left">
+                            <div class="col-4 align-items-center">
+                                <h4>Step 1: Integration</h4>
+                                <button type="button" class="btn btn-info btn-md btn-block" id="dapiOn" disabled="true"><span id="dapi-loading" class="spinner-border spinner-border-sm text-light"></span> <span>Integrate Bank Login</span></button>
+                                <div id="dapiOff" style="display: none;"></div>
+                            </div>
+                            <div class="col-4">
+                                <h4>Step 2: Authentication</h4>
+                                <div id="dapi-auth" style="display: none;"><span class="spinner-border spinner-border-sm text-info"></span> <span>We are authenticating</span></div>
+                            </div>
+                            <div class="col-4">
+                                <h4>Step 3: Transaction Analyzing</h4>
+                                <div id="dapi-transaction" style="display: none;"></div>
+                            </div>
+                            <div class="col-12 mt-4"></div>
+                        </div>
                     </div>
                 </div>        
             </div>
 
             <!-- this is footer section html code  -->
-            <div id="footerContent"></div>
+            <div id="footerContent" style="position: fixed;width: 100%;bottom: 0;"></div>
             <!-- this is footer section html code  -->
         </div>
 
