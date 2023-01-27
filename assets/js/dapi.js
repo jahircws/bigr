@@ -11,9 +11,10 @@ var handler = Dapi.create({
     clientHeaders: {},
     clientBody: {},
     onSuccessfulLogin: function(bankAccount) {
-        $('#dapiOff').addClass('text-success').html('<i class="fa fa-check"></i> Integration Done').show();
-        $('#dapi-auth').html('<span class="spinner-border spinner-border-sm text-info"></span> We are authenticating').show();
-        $('#dapiOn').hide();
+        $('#dapiOn').fadeOut(1000);
+        $('#dapiOff').addClass('text-success').html('<i class="fa fa-check-square-o font-20"></i> Integration Done').fadeIn(2000);
+        $('#dapi-auth').html('<span class="spinner-border spinner-border-sm text-info"></span> We are authenticating').fadeIn(1000);
+        
         ba = bankAccount;
         // To get acoutn details
         ba.data.getAccounts().then(payload => {
@@ -21,7 +22,7 @@ var handler = Dapi.create({
             "Your account details",
             payload.accounts,
             (account) => {
-                $('#dapi-auth').addClass('text-success').html('<i class="fa fa-check"></i> Authentication Done');
+                $('#dapi-auth').addClass('text-success').html('<i class="fa fa-check-square-o font-20"></i> Authentication Done').fadeIn(1000);
                 accountID = account.id;
                 // console.dir(account)
                 getIntervalTransactions();
@@ -41,7 +42,7 @@ var handler = Dapi.create({
     },
     onReady: function() {
         $('#dapiOn').removeAttr('disabled');
-        $('#dapi-loading').hide();
+        $('#dapi-loading').fadeOut(1000);
     },
     onExit: function() {
         console.log("User exited the flow")
@@ -60,7 +61,7 @@ $('#dapiOn').on('click', () => {
 
 function getIntervalTransactions(start_date=null, end_date=null){
     if(ba){
-        $('#dapi-transaction').html('<span class="spinner-border spinner-border-sm text-info"></span> We are analyzing your transactions').show();
+        $('#dapi-transaction').html('<span class="spinner-border spinner-border-sm text-info"></span> We are analyzing your transactions').fadeIn(1000);
         if(start_date === null && end_date === null){
             end_date = moment().endOf('month');
             start_date = moment().startOf('month').subtract(5, 'months');
@@ -97,11 +98,11 @@ function getIntervalTransactions(start_date=null, end_date=null){
                 console.error("API Responded with an error")
                 console.dir(transactionsResponse)
             }
-            $('#dapi-transaction').addClass('text-success').html('<i class="fa fa-check"></i>Transactions Analysis Done');
+            $('#dapi-transaction').addClass('text-success').html('<i class="fa fa-check-square-o font-20"></i> Transactions Analysis Done').fadeIn();
         })
         .catch(error => {
             console.dir(error)
-            $('#dapi-transaction').html('<i class="fa fa-exclamation-circle"></i>Transactions Analysis Failed');
+            $('#dapi-transaction').html('<i class="fa fa-exclamation-circle font-20"></i> Transactions Analysis Failed').fadeIn();
         })
     }else{
         alert('First login in to your bank account')
