@@ -5949,7 +5949,7 @@ figcaption {
     padding-bottom: 100px;
 }
 .section.main-hero {
-    margin-top: 95px;
+    /* margin-top: 95px; */
     padding-top: 0;
     padding-bottom: 35px;
     background-image: url("../images/home.png");
@@ -6083,7 +6083,7 @@ figcaption {
     background-color: transparent;
 }
 .header-wrapper.mob {
-    position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     right: 0;

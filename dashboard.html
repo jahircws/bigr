@@ -25,31 +25,56 @@
             <div id="headerContent"></div>
             <!-- this is code header section ===================== -->
 
-            <div class="section mob wf-section container" style="margin-top: 50px; margin-bottom: 50px;">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row justify-content-center text-left">
-                            <div class="col-4 align-items-center">
-                                <h4>Step 1: Integration</h4>
-                                <button type="button" class="btn btn-info btn-md btn-block" id="dapiOn" disabled="true"><span id="dapi-loading" class="spinner-border spinner-border-sm text-light"></span> <span>Integrate Bank Login</span></button>
-                                <div id="dapiOff" style="display: none;"></div>
+            <div class="section mob wf-section bg-light" style="padding-top: 50px; padding-bottom: 50px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body text-left">
+                                    <div style="height: 80px;">
+                                        <h4>Step 1: Integration</h4>
+                                        <button type="button" class="btn btn-info btn-md btn-block" id="dapiOn" disabled="true"><span id="dapi-loading" class="spinner-border spinner-border-sm text-light"></span> <span>Integrate Bank Account</span></button>
+                                        <div id="dapiOff" style="display: none;"></div>
+                                    </div>
+                                    <hr>
+                                    <div style="height: 80px;">
+                                        <h4>Step 2: Authentication</h4>
+                                        <div id="dapi-auth" style="display: none;"><span class="spinner-border spinner-border-sm text-info"></span> <span>We are authenticating</span></div>
+                                    </div>
+                                    <hr>
+                                    <div style="height: 80px;">
+                                        <h4>Step 3: Transaction Analyzing</h4>
+                                        <div id="dapi-transaction" style="display: none;"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-4">
-                                <h4>Step 2: Authentication</h4>
-                                <div id="dapi-auth" style="display: none;"><span class="spinner-border spinner-border-sm text-info"></span> <span>We are authenticating</span></div>
-                            </div>
-                            <div class="col-4">
-                                <h4>Step 3: Transaction Analyzing</h4>
-                                <div id="dapi-transaction" style="display: none;"></div>
-                            </div>
-                            <div class="col-12 mt-4"></div>
                         </div>
-                    </div>
-                </div>        
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-body text-left" style="min-height: 345px;">
+                                    <h4 class="card-title">Recurring transaction for past 6 months</h4>
+                                    <table class="table table-stripe" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%">Sl#</th>
+                                                <th width="45%">Name</th>
+                                                <th width="40%">Details</th>
+                                                <th width="10%">Counts</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="creditTimes">
+    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>       
             </div>
 
             <!-- this is footer section html code  -->
-            <div id="footerContent" style="position: fixed;width: 100%;bottom: 0;"></div>
+            <div id="footerContent" style="position: relative;width: 100%;bottom: 0;"></div>
             <!-- this is footer section html code  -->
         </div>
 

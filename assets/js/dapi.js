@@ -15,7 +15,6 @@ var handler = Dapi.create({
         $('#dapi-auth').html('<span class="spinner-border spinner-border-sm text-info"></span> We are authenticating').show();
         $('#dapiOn').hide();
         ba = bankAccount;
-        console.log(ba)
         // To get acoutn details
         ba.data.getAccounts().then(payload => {
             ba.showAccountsModal(
@@ -35,8 +34,7 @@ var handler = Dapi.create({
     },
     onFailedLogin: function(err) {
         if (err != null) {
-            console.log("Error");
-            console.log(err);
+            console.log("Error",err);
         } else {
             console.log("No error");
         }
@@ -44,8 +42,6 @@ var handler = Dapi.create({
     onReady: function() {
         $('#dapiOn').removeAttr('disabled');
         $('#dapi-loading').hide();
-        // alert('Login is ready')
-        // handler.open(); // opens the Connect widget
     },
     onExit: function() {
         console.log("User exited the flow")
@@ -61,34 +57,42 @@ var handler = Dapi.create({
 $('#dapiOn').on('click', () => {
     handler.open();
 });
-// $('#dapiOff').on('click', () => {
-//     window.location.reload();
-//     // ba = null;
-//     // handler.open();
-// })
 
 function getIntervalTransactions(start_date=null, end_date=null){
     if(ba){
         $('#dapi-transaction').html('<span class="spinner-border spinner-border-sm text-info"></span> We are analyzing your transactions').show();
         if(start_date === null && end_date === null){
-            end_date = moment();
+            end_date = moment().endOf('month');
             start_date = moment().startOf('month').subtract(5, 'months');
         }
+        let monthDiff = Math.floor(end_date.diff(start_date, "months", "true"));
         ba.data.getTransactions(accountID, start_date.format('YYYY-MM-DD'), end_date.format('YYYY-MM-DD')).then(transactionsResponse => {
             if(transactionsResponse.status === "done") {
-                let transHtml = [];
-                console.dir(transactionsResponse.transactions)
-                transactionsResponse.transactions.map((item, i) => {
-                    transHtml.push({
-                        id: (i+1),
-                        transaction_date: moment(item.date).format('YYYY-MM-DD HH:mm:ss'),
-                        details: item.description+'<br>'+item.details,
-                        type: (item.type).toUpperCase(),
-                        reference: item.reference,
-                        amount: item.amount,
-                    });
+                let transHtml = '';
+                let creditDistinct = [];
+                let creditTransaction = (transactionsResponse.transactions).filter(item => item.type === "credit");
+                for(let i=0; i<creditTransaction.length; i++){
+                    let objIndex = creditDistinct.findIndex(item => item.details === creditTransaction[i].details); 
+                    if(objIndex >= 0){
+                        creditDistinct[objIndex].count++;
+                    }else{
+                        creditDistinct.push({
+                            name: creditTransaction[i].description,
+                            details: creditTransaction[i].details,
+                            count: 1
+                        })
+                    }
+                }
+                creditDistinct.filter(item => item.count === monthDiff).map((item, i) => {
+                    transHtml += '<tr>\
+                            <td>'+(i+1)+'</td>\
+                            <td>'+item.name+'</td>\
+                            <td>'+item.details+'</td>\
+                            <td>'+item.count+'</td>\
+                            </tr>';
                 })
-                console.log(transHtml)
+                $('#creditTimes').html(transHtml);
+                // console.log(creditDistinct)
             } else {
                 console.error("API Responded with an error")
                 console.dir(transactionsResponse)
