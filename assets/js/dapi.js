@@ -24,7 +24,7 @@ var handler = Dapi.create({
             (account) => {
                 $('#dapi-auth').addClass('text-success').html('<i class="fa fa-check-square-o font-20"></i> Authentication Done').fadeIn(1000);
                 accountID = account.id;
-                // console.dir(account)
+                console.dir(account)
                 getIntervalTransactions();
             },
             () => {
@@ -72,28 +72,33 @@ function getIntervalTransactions(start_date=null, end_date=null){
                 let transHtml = '';
                 let creditDistinct = [];
                 let creditTransaction = (transactionsResponse.transactions).filter(item => item.type === "credit");
-                for(let i=0; i<creditTransaction.length; i++){
-                    let objIndex = creditDistinct.findIndex(item => item.details === creditTransaction[i].details); 
-                    if(objIndex >= 0){
-                        creditDistinct[objIndex].count++;
-                    }else{
-                        creditDistinct.push({
-                            name: creditTransaction[i].description,
-                            details: creditTransaction[i].details,
-                            count: 1
-                        })
+                if(creditTransaction.length){
+                    for(let i=0; i<creditTransaction.length; i++){
+                        let objIndex = creditDistinct.findIndex(item => item.details === creditTransaction[i].details); 
+                        if(objIndex >= 0){
+                            creditDistinct[objIndex].count++;
+                        }else{
+                            creditDistinct.push({
+                                name: creditTransaction[i].description,
+                                details: creditTransaction[i].details,
+                                count: 1
+                            })
+                        }
                     }
+                    creditDistinct.filter(item => item.count === monthDiff).map((item, i) => {
+                        transHtml += '<tr>\
+                                <td>'+(i+1)+'</td>\
+                                <td>'+item.name+'</td>\
+                                <td>'+item.details+'</td>\
+                                <td>'+item.count+'</td>\
+                                </tr>';
+                    })
+                }else{
+                    transHtml = '<tr><td colspan="4" class="text-center">No record found</td></tr>';
                 }
-                creditDistinct.filter(item => item.count === monthDiff).map((item, i) => {
-                    transHtml += '<tr>\
-                            <td>'+(i+1)+'</td>\
-                            <td>'+item.name+'</td>\
-                            <td>'+item.details+'</td>\
-                            <td>'+item.count+'</td>\
-                            </tr>';
-                })
+                
                 $('#creditTimes').html(transHtml);
-                // console.log(creditDistinct)
+                console.log(transHtml)
             } else {
                 console.error("API Responded with an error")
                 console.dir(transactionsResponse)
