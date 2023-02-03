@@ -1,5 +1,11 @@
 var ba = null;
 var accountID = null;
+
+$(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+
 var handler = Dapi.create({
     environment: Dapi.environments.sandbox, //or .production
     appKey: "4e1c41d5e6edafdf705b790d7e37e4d43731562b35abcf15eb62312f8bb3b456", 
@@ -24,7 +30,6 @@ var handler = Dapi.create({
             (account) => {
                 $('#dapi-auth').addClass('text-success').html('<i class="fa fa-check-square-o font-20"></i> Authentication Done').fadeIn(1000);
                 accountID = account.id;
-                console.dir(account)
                 getIntervalTransactions();
             },
             () => {
@@ -72,7 +77,8 @@ function getIntervalTransactions(start_date=null, end_date=null){
                 let transHtml = '';
                 let creditDistinct = [];
                 let creditTransaction = (transactionsResponse.transactions).filter(item => item.type === "credit");
-                if(creditTransaction.length){
+                // console.log("creditTransaction:",creditTransaction.length)
+                if(creditTransaction.length > 0){
                     for(let i=0; i<creditTransaction.length; i++){
                         let objIndex = creditDistinct.findIndex(item => item.details === creditTransaction[i].details); 
                         if(objIndex >= 0){
@@ -85,7 +91,9 @@ function getIntervalTransactions(start_date=null, end_date=null){
                             })
                         }
                     }
-                    creditDistinct.filter(item => item.count === monthDiff).map((item, i) => {
+                    // console.log("creditDistinct:", creditDistinct)
+                    // console.log("monthDiff", monthDiff)
+                    creditDistinct.filter(item => (item.count === monthDiff || item.count === (monthDiff-1))).map((item, i) => {
                         transHtml += '<tr>\
                                 <td>'+(i+1)+'</td>\
                                 <td>'+item.name+'</td>\
@@ -93,12 +101,13 @@ function getIntervalTransactions(start_date=null, end_date=null){
                                 <td>'+item.count+'</td>\
                                 </tr>';
                     })
+                    console.log("transHtml-1:",transHtml)
                 }else{
                     transHtml = '<tr><td colspan="4" class="text-center">No record found</td></tr>';
                 }
                 
                 $('#creditTimes').html(transHtml);
-                console.log(transHtml)
+                console.log("transHtml-2:",transHtml)
             } else {
                 console.error("API Responded with an error")
                 console.dir(transactionsResponse)

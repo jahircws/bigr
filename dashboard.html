@@ -14,12 +14,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/webfont.js" type="text/javascript"></script>
+        <script src="assets/js/webfont.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
         <script src="https://cdn.dapi.com/dapi/v2/sdk.js"></script>
         <style>
             .font-20 {
                 font-size: 20px;
+            }
+            .tab {
+                display: none;
+            }
+            .invalid {
+                background-color: #ffdddd;
+                border: 1px solid red;
             }
         </style>
     </head>
@@ -38,21 +45,51 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-body text-left">
-                                    <div style="height: 80px;font-family: Gilroy, sans-serif;">
-                                        <h4>Step 1: Integration</h4>
-                                        <button type="button" class="btn btn-info btn-md btn-block" id="dapiOn" disabled="true"><span id="dapi-loading" class="spinner-border spinner-border-sm text-light"></span> <span>Integrate Bank Account</span></button>
-                                        <div id="dapiOff" style="display: none;"></div>
-                                    </div>
-                                    <hr>
-                                    <div style="height: 80px;font-family: Gilroy, sans-serif;">
-                                        <h4>Step 2: Authentication</h4>
-                                        <div id="dapi-auth" style="display: none;"><span class="spinner-border spinner-border-sm text-info"></span> <span>We are authenticating</span></div>
-                                    </div>
-                                    <hr>
-                                    <div style="height: 80px;font-family: Gilroy, sans-serif;">
-                                        <h4>Step 3: Transaction Analyzing</h4>
-                                        <div id="dapi-transaction" style="display: none;"></div>
-                                    </div>
+                                    <form action="#" method="post" id="regForm" enctype="multipart/form-data">
+                                        <div class="tab">
+                                            <div style="font-family: Gilroy, sans-serif;">
+                                                <h4>Step 1: Upload Business License</h4>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input finput" name="business_license" id="business_license">
+                                                    <label class="custom-file-label" for="business_license">Choose File</label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div style="font-family: Gilroy, sans-serif;">
+                                                <h4>Step 2: Enter Company URL</h4>
+                                                <input type="url" name="company_url" id="company_url" class="form-control finput">
+                                            </div>
+                                            <hr>
+                                            <div style="font-family: Gilroy, sans-serif;">
+                                                <h4>Step 3: Enter Company Information</h4>
+                                                <textarea name="company_info" id="company_info" cols="30" rows="5" class="form-control finput"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="tab">
+                                            <input type="hidden" class="finput" name="dapi" value="dapi">
+                                            <div style="font-family: Gilroy, sans-serif;">
+                                                <h4>Step 4: Integration</h4>
+                                                <button type="button" class="btn btn-info btn-md btn-block" id="dapiOn" disabled="true"><span id="dapi-loading" class="spinner-border spinner-border-sm text-light"></span> <span>Integrate Bank Account</span></button>
+                                                <div id="dapiOff" style="display: none;"></div>
+                                            </div>
+                                            <hr>
+                                            <div style="height: 80px;font-family: Gilroy, sans-serif;">
+                                                <h4>Step 5: Authentication</h4>
+                                                <div id="dapi-auth" style="display: none;"><span class="spinner-border spinner-border-sm text-info"></span> <span>We are authenticating</span></div>
+                                            </div>
+                                            <hr>
+                                            <div style="height: 80px;font-family: Gilroy, sans-serif;">
+                                                <h4>Step 6: Transaction Analyzing</h4>
+                                                <div id="dapi-transaction" style="display: none;"></div>
+                                            </div>
+                                        </div>
+                                        <div style="overflow:auto; margin-top: 5px;">
+                                            <div style="float:right;">
+                                              <button type="button" class="btn btn-info btn-sm" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                              <button type="button" class="btn btn-info btn-sm" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -84,12 +121,67 @@
             <div id="footerContent" style="position: relative;width: 100%;bottom: 0;"></div>
             <!-- this is footer section html code  -->
         </div>
+        <script>
+            var currentTab = 0; // Current tab is set to be the first tab (0)
+            showTab(currentTab); // Display the current tab
 
+            function showTab(n) {
+                // This function will display the specified tab of the form ...
+                var x = document.getElementsByClassName("tab");
+                x[n].style.display = "block";
+                // ... and fix the Previous/Next buttons:
+                if (n == 0) {
+                    document.getElementById("prevBtn").style.display = "none";
+                } else {
+                    document.getElementById("prevBtn").style.display = "inline";
+                }
+                console.log(n, x.length)
+                if (n == (x.length - 1)) {
+                    // document.getElementById("nextBtn").innerHTML = "Submit";
+                    document.getElementById("nextBtn").style.display = "none";
+                } else {
+                    document.getElementById("nextBtn").style.display = "block";
+                    document.getElementById("nextBtn").innerHTML = "Next";
+                }
+            }
+
+            function nextPrev(n) {
+                var x = document.getElementsByClassName("tab");
+                if (n == 1 && !validateForm()) return false;
+                // Hide the current tab:
+                x[currentTab].style.display = "none";
+                // Increase or decrease the current tab by 1:
+                currentTab = currentTab + n;
+                console.log(n, currentTab, x.length)
+                // if you have reached the end of the form... :
+                if (currentTab >= x.length) {
+                    //...the form gets submitted:
+                    // document.getElementById("regForm").submit();
+                    // return false;
+                    currentTab = currentTab - n;
+                }
+                // Otherwise, display the correct tab:
+                showTab(currentTab);
+            }
+
+            function validateForm() {
+                var x, y, i, valid = true;
+                x = document.getElementsByClassName("tab");
+                y = x[currentTab].getElementsByClassName("finput");
+                for (i = 0; i < y.length; i++) {
+                    if (y[i].value == "") {
+                    y[i].className += " invalid";
+                    valid = false;
+                    }
+                }
+                
+                return valid;
+            }
+        </script>
         <script src="assets/js/webflow.font.js" type="text/javascript"></script>
         <!-- this most js file -->
         <script src="assets/js/index.min.js"></script>
         <script src="assets/js/dashboard-script.js"></script>
         <script src="assets/js/dapi.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     </body>
 </html>
