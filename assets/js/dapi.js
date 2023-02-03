@@ -87,6 +87,7 @@ function getIntervalTransactions(start_date=null, end_date=null){
                             creditDistinct.push({
                                 name: creditTransaction[i].description,
                                 details: creditTransaction[i].details,
+                                amount: Number(creditTransaction[i].amount).toLocaleString('en-AE', {style: 'currency', currency: creditTransaction[i].currency.code}),
                                 count: 1
                             })
                         }
@@ -98,6 +99,7 @@ function getIntervalTransactions(start_date=null, end_date=null){
                                 <td>'+(i+1)+'</td>\
                                 <td>'+item.name+'</td>\
                                 <td>'+item.details+'</td>\
+                                <td>'+item.amount+'</td>\
                                 <td>'+item.count+'</td>\
                                 </tr>';
                     })
